@@ -1,0 +1,29 @@
+<html>
+<script>
+function openApp () {
+    var start, end, elapsed;
+    var time = (new Date()).getTime();
+    try{
+        document.location = "{{link.apple_link}}";
+    }
+    catch (err){
+        console.log(err)
+    }
+    setTimeout(function(){
+        var now = (new Date()).getTime();
+        if((now - time)<2550) {
+        javascript: console.log(new Date().getTime());
+            document.location = "{{link.desktop_link}}";
+        }
+        else {
+            window.open('', '_self', '');
+            window.close();
+        }
+    }, 2000);
+
+}
+</script>
+<body onload="openApp()">
+    <a onclick="openApp()" id="newButton">Opening app...</a>
+</body>
+</html>

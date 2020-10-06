@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+  <!-- Required meta tags always come first -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>App To Link </title>
+
+  {% load static %}
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'mdb/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="{% static 'mdb/css/mdb.min.css' %}" rel="stylesheet">
+
+
+</head>
+
+<body class="text-center">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto"> </header>
+    <main role="main" class="container">
+      {% block content %}
+              
+              
+      {% endblock %}
+    </main>
+
+  </div>
+</body>
+
+</html>

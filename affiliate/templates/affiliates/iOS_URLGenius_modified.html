@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+    //<![CDATA[
+
+    window.after_app = "";
+    window.app = 'Amazon';
+    window.app_icon_url = 'https://s3.amazonaws.com/urlg_production/apps/icons/31/small_128/350x350bb.jpg?1492927252';
+    window.app_scheme = "{{ link.apple_link }}";
+    window.app_store_url = "https://apps.apple.com/us/app/amazon-app-shop-browse-scan/id297606951";
+    window.background_image_1440 = "";
+    window.background_image_2880 = '';
+    window.browser_family = "";
+    window.custom_launch = 'true';
+    window.custom_style = '';
+    window.disable_launch = "false";
+    window.domain = 'urlgeni.us';
+    window.download_app = "";
+    window.download_app_url = "";
+    window.fallback_destination = 'mobile_web';
+    window.fallback_url = "";
+    window.first_try_url = "";
+    window.hit_update_path = '/api/internal/hits/ebaf5db85a967f88';
+    window.hit_update_qs_update_path = '/api/internal/hits/ebaf5db85a967f88/qs_update';
+    window.ios_delay = '0.1';
+    window.ios_facebook = "";
+    window.launch_url = 'https://urlgeni.us/amazon/9goh/ios';
+    window.link_id = "661465";
+    window.mobile_web = "{{ link.desktop_link }}";
+    window.os_family = 'ios';
+    window.respect_link_fallback_options_on_choice_page = 'true';
+    window.whitelabel = 'true';
+
+    //]]>
+    </script>
+
+    <div class="" id='choice-section' style='display:none'>
+        <div class="dumbBoxWrap">
+            <div class="dumbBoxOverlay"></div>
+            <div class="vertical-offset">
+                <div class="appBox" style="background-color: #ffffff;">
+                    <div id="app-button" class="button app" style="background-color: #ffffff !important; border-color: #000000 !important;">
+                        <div class="app-img-wrap">
+                            <img id="app-img" class="app-img" src='https://s3.amazonaws.com/urlg_production/apps/icons/31/small_128/350x350bb.jpg?1492927252' style="border-color: #cccccc;">
+                        </div>
+                        <a id="app-text" style="color: #000000 !important;" href="com.amazon.mobile.shopping.web://amazon.de/dp/B010O52076/ref=as_li_ss_tl?ie=UTF8&amp;linkCode=ll1&amp;tag=ichfindslusti-21&amp;linkId=cf56f60eef325b7fa4cbd763a6d374fb&amp;language=de_DE">In App öffnen</a>
+                    </div>
+
+                    <div id="browser-button" class="button browser" style="background-color: #000000 !important;border-color: #000000 !important;">
+                        <a id="browser-text" style="color: #ffffff !important;" href="https://www.amazon.de/dp/B010O52076/ref=as_li_ss_tl?ie=UTF8&amp;linkCode=ll1&amp;tag=ichfindslusti-21&amp;linkId=cf56f60eef325b7fa4cbd763a6d374fb&amp;language=de_DE">Im Browser öffnen</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div id="choicefooter">
+            <div class="footer_area">
+                <!--START FOOTER-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div id="fspacing">
+                                <div class="footer text-center">
+                                    <!--FOOTER-->
+                                    <p>
+                                        <a id="choice_page_link_to_urlg" href="https://app.urlgeni.us?utm_source=amazon%2F9goh&amp;utm_medium=footer&amp;utm_campaign=btyb" target="_blank">
+                                            <img width="136px" alt="Generate free deeplink URLs for your mobile app, or to your content in other apps (such as Instagram, Amazon, Facebook, Messenger, Google Maps, YouTube...) with URLgenius" src="/assets/logo-tracking-1c06e24709249c1d3bc9ab419e6ae5838e86eb7bd9068949af5dff7771b7b90e.png"/>
+                                            <a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+    var isMobile = {
+        iOS: function() {
+            return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+        },
+        any: function() {
+            return isMobile.iOS();
+        }
+    };
+
+    function ajaxRequest() {
+        var activexmodes = ["Msxml2.XMLHTTP", "Microsoft.XMLHTTP"] //activeX versions to check for in IE
+
+        //Test for support for ActiveXObject in IE first (as XMLHttpRequest in IE7 is broken)
+        if (window.ActiveXObject) {
+            for (var i = 0; i < activexmodes.length; i++) {
+                try {
+                    return new ActiveXObject(activexmodes[i])
+                } catch (e) {
+
+                }
+            }
+        } else if (window.XMLHttpRequest) {
+            // if Mozilla, Safari etc
+            return new XMLHttpRequest()
+        } else {
+            return false
+        }
+    }
+
+    function sendAppInstalled(values) {
+        var mypostrequest = new ajaxRequest();
+        var url = '';
+
+        if (window.fallback_destination === "mobile_web") {
+            url = window.hit_update_qs_update_path + "?app_opened=" + values.app_opened + "&referrer=" + document.referrer;
+        } else {
+            url = window.hit_update_qs_update_path + "?app_opened=" + values.app_opened + "&app_downloaded=" + values.app_downloaded + "&referrer=" + document.referrer
+        }
+
+        mypostrequest.open("GET", url, true);
+        mypostrequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        mypostrequest.send();
+    }
+
+    if (window.app_scheme) {
+        window.location = window.app_scheme;
+    } else {
+        window.location = window.mobile_web;
+    }
+
+    var delay = 100;
+
+    if (isMobile.iOS()) {
+        delay = window.ios_delay * 1000;
+    }
+
+    setTimeout(() => {
+        sendAppInstalled({
+            app_opened: "true",
+            app_downloaded: "false"
+        });
+
+        $('#choice-section').css("display", "block")
+
+    }, delay + 2000);
+
+    setTimeout(function() {
+        if (window.fallback_destination === "mobile_web") {
+            sendAppInstalled({
+                app_opened: "false",
+                app_downloaded: "false"
+            });
+
+            if (document.hasFocus() == true) {
+                window.location = window.mobile_web;
+            }
+
+        } else if (window.fallback_destination === "app_store") {
+            sendAppInstalled({
+                app_opened: "false",
+                app_downloaded: "true"
+            })
+
+            if (isMobile.iOS()) {
+                app_downloaded:
+                "true"
+                window.location = window.location.href + "/ios?app_installed=false";
+            }
+            else {
+                window.location = window.app_store_url;
+            }
+        }
+    }, delay);
+    </script>
+
+    <input type="hidden" name="background_image_1440" id="background_image_1440"/>
+</body>
+</html>
+

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Link To App - Try's</h1>
+<p class="lead">
+  This are some of already done trys. The Code of this application can be watched at following git Repo:<br/>
+  <a href="https://github.com/JangasCodingplace/publicaffiliate">
+    https://github.com/JangasCodingplace/publicaffiliate
+  </a><br/>
+  This Code is just for testing and documentating redirections specially for iOS and Android.
+  <hr>
+  <b>Please Note:</b> this is just for redirection to amazon. Any businesslogic depends on Usermanagement etc. is not included and currently not wanted.
+</p>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><b>Android</b> direct redirection</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Not running for all </h6>
+    <p class="card-text">Creates an Android link with fallback URL. No JavaScript Redirection included</p>
+    <a href="https://pastebin.com/kd6Cj74Q" class="card-link" target="_blank">Code</a>
+    <a href="{% url 'AndroidRedirect' 'abcdef' %}" class="card-link">Shorten URL</a>
+  </div>
+</div>
+
+<div class="card mt-2">
+  <div class="card-body">
+    <h5 class="card-title"><b>iOS</b> Countdown</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Not Running for all.</h6>
+    <p class="card-text">Redirect first to an intern HTML page. Then redirect to Amazon.</p>
+    <a href="https://pastebin.com/EjBEMQTK" class="card-link" target="_blank">Code Backend</a>
+    <a href="https://pastebin.com/48LeJYk6" class="card-link" target="_blank">Code Frontend</a>
+    <a href="{% url 'IOSCountdown' 'abcdef' %}" class="card-link">Shorten URL</a>
+  </div>
+</div>
+
+<div class="card mt-2">
+  <div class="card-body">
+    <h5 class="card-title"><b>iOS</b> URLGenius (with special thanks)</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Not Running for all.</h6>
+    <p class="card-text">This Code is original copied from URLGenius.</p>
+    <a href="https://pastebin.com/EjBEMQTK" class="card-link" target="_blank">Code Backend</a>
+    <a href="https://pastebin.com/94ymcAvY" class="card-link" target="_blank">Code Frontend (Modified & In Used)</a>
+    <a href="https://pastebin.com/eBrbvTGQ" class="card-link" target="_blank">Code Frontend (Original & In Not Used)</a>
+    <a href="{% url 'IOSURLGenius' 'abcdef' %}" class="card-link">Shorten URL</a>
+  </div>
+</div>
+
+{% endblock %}
