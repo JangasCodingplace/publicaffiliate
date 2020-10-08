@@ -65,8 +65,8 @@ class Link(models.Model):
         else:
             substring = self.link[len("https://"):]
         if substring.endswith('/'):
-            return substring[:-1]
-        return substring
+            return f"{substring[:-1]}?ref_=ast_sto_dp"
+        return f"{substring}?ref_=ast_sto_dp"
 
     @property
     def desktop_link(self):
@@ -87,8 +87,14 @@ class Link(models.Model):
     def apple_link(self):
         scheme = "com.amazon.mobile.shopping.web://"
         link_substring = self.substring
-        # fallback = "S.browser_fallback_url={}".format(self.link)
         return "{}{}".format(
             scheme, link_substring
         )
 
+    @property
+    def mobile_link(self):
+        scheme = "com.amazon.mobile.shopping.web://"
+        link_substring = self.substring
+        return "{}{}".format(
+            scheme, link_substring
+        )

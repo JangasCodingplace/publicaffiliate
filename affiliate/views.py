@@ -36,3 +36,13 @@ def ios_urlgenius(request, key):
 
     data = {'link': link}
     return render(request, 'affiliates/iOS_URLGenius_modified.html', data)
+
+
+def twago(request, key):
+    try:
+        link = Link.objects.get(key=key)
+    except Link.DoesNotExist:
+        raise Http404("Page not Found.")
+
+    data = {'link': link}
+    return render(request, 'affiliates/twago.html', data)

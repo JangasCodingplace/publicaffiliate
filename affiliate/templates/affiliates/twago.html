@@ -1,0 +1,12 @@
+<html>
+<body>
+    <script>
+        var now = new Date().valueOf();
+        setTimeout(function () {
+            if (new Date().valueOf() - now > 100) return;
+            window.location = "{{link.desktop_link}}";
+        }, 25);
+        window.location = "{{link.mobile_link}}";
+    </script>
+</body>
+</html>
