@@ -70,7 +70,7 @@ class Link(models.Model):
 
     @property
     def desktop_link(self):
-        return self.link
+        return f"{self.link}?ref_=ast_sto_dp"
 
     @property
     def android_link(self):
