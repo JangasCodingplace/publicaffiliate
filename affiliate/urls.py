@@ -12,7 +12,7 @@ urlpatterns = [
      path('ios-02/<slug:key>',
           views.ios_urlgenius,
           name="IOSURLGenius"),
-     path('ios-02/<slug:key>',
+     path('twago/<slug:key>',
           views.twago,
           name="Twago"),
 ]
