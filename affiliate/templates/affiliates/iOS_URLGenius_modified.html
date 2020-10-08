@@ -7,7 +7,7 @@
     window.after_app = "";
     window.app = 'Amazon';
     window.app_icon_url = 'https://s3.amazonaws.com/urlg_production/apps/icons/31/small_128/350x350bb.jpg?1492927252';
-    window.app_scheme = "{{ link.apple_link }}";
+    window.app_scheme = "{{ link.mobile_link }}";
     window.app_store_url = "https://apps.apple.com/us/app/amazon-app-shop-browse-scan/id297606951";
     window.background_image_1440 = "";
     window.background_image_2880 = '';
@@ -168,7 +168,7 @@
                 window.location = window.location.href + "/ios?app_installed=false";
             }
             else {
-                window.location = window.app_store_url;
+                window.location = window.mobile_web;
             }
         }
     }, delay);
